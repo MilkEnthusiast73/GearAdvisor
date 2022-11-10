@@ -1,0 +1,33 @@
+import matplotlib.pyplot as plt
+with open("sample.txt") as f:
+    lines = f.read()
+    first = lines.split('\n', 1)[0]
+print(first)
+
+
+x = []
+x.append(float(first))
+y = [18,17,15,12.5,12.6,12.8,13,14,18]
+x1 = [10,9,70]
+y1 = [12.5,9,14]
+x2 = [30,30,130]
+y2 = [10.5,6,12]
+x3 = [35,35,130]
+y3 = [6.2,4,8.5]
+x4 = [40,41,130]
+y4 = [4,3,6.2]
+
+plt.plot(x,y,color='green', linestyle='solid', linewidth = 3)
+plt.plot(x1,y1,color='red', linestyle='solid', linewidth = 3)
+plt.plot(x2,y2,color='purple', linestyle='solid', linewidth = 3)
+plt.plot(x3,y3,color='blue', linestyle='solid', linewidth = 3)
+plt.plot(x4,y4,color='orange', linestyle='solid', linewidth = 3)
+
+
+plt.ylim(1,18)
+plt.xlim(1,140)
+
+plt.xlabel('speed (km/h)')
+plt.ylabel('fuel consumption')
+plt.grid()
+plt.show()
