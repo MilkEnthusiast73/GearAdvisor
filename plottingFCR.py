@@ -10,6 +10,7 @@ def create_plot_dictionary(gearCount):
     
     return graph
 
+print(create_plot_dictionary(6))
 
 def update_plot(plot, currentGear, currentSpeed, currentFCR):
     plot[currentGear][currentSpeed] = currentFCR

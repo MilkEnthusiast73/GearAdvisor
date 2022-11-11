@@ -18,8 +18,9 @@ def fetchAdvice(speed, gear):
     direction = ""
     for speedPoint in shift_points:
         if speed <= speedPoint:
-            idealGear = 1
             break
+        idealGear += 1
+        
     if gear == idealGear:
         direction = "maintain"
     elif gear < idealGear:
