@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-x = [0, 2,3,7,10,15,19,25,40]
+x = [0, 2,3,7,10,15,19,25,40] #I think we should make these ints. When the graph gets more data points through the calibration we don't wanna go crazy with a lot of points
 y = [18,17,15,12.5,12.6,12.8,13,14,18]
 x1 = [10,9,70]
 y1 = [12.5,9,14]
@@ -11,18 +11,18 @@ y3 = [6.2,4,8.5]
 x4 = [40,41,130]
 y4 = [4,3,6.2]
 
-plt.plot(x, y,color='green', linestyle='solid', linewidth = 3)
-plt.plot(x1,y1,color='red', linestyle='solid', linewidth = 3)
-plt.plot(x2,y2,color='purple', linestyle='solid', linewidth = 3)
-plt.plot(x3,y3,color='blue', linestyle='solid', linewidth = 3)
-plt.plot(x4,y4,color='orange', linestyle='solid', linewidth = 3)
+plt.plot(x, y,color='green', linestyle='solid', linewidth = 1)
+plt.plot(x1,y1,color='red', linestyle='solid', linewidth = 1)
+plt.plot(x2,y2,color='purple', linestyle='solid', linewidth = 1)
+plt.plot(x3,y3,color='blue', linestyle='solid', linewidth = 1)
+plt.plot(x4,y4,color='orange', linestyle='solid', linewidth = 1)
 
 plt.ylim(1,18)
 plt.xlim(1,140)
 
-plt.xlabel('x - axis')
+plt.xlabel('Speeed - km/h')
 # naming the y axis
-plt.ylabel('y - axis')
+plt.ylabel('Fuel Consumption - l/km')
 
 plt.grid()
 plt.show()
