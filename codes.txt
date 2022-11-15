@@ -1,0 +1,23 @@
+Coolant Temperature:
+"P0116": "Engine Coolant Temperature Circuit Range/Performance"
+"P2183": "Engine Coolant Temperature Sensor 2 Circuit Range/Performance"
+"P2557": "Engine Coolant Level Sensor/Switch Circuit Range/Performance"
+
+"P0181": "Fuel Temperature Sensor A Circuit Range/Performance"
+"P0186": "Fuel Temperature Sensor B Circuit Range/Performance"
+
+Vehicle Speed:
+"P0501": "Vehicle Speed Sensor 'A' Range/Performance"
+"P2159": "Vehicle Speed Sensor 'B' Range/Performance"
+
+MAF:
+"P0101": "Mass or Volume Air Flow Circuit Range/Performance"
+
+RPM:
+"P0726": "Engine Speed Input Circuit Range/Performance",
+
+Each gear will have its own constant. Determine this constant by speed/RPM
+or maybe this: "P0915": "Gear Shift Position Circuit Range/Performance"
+
+May use this:
+"P0177": "Fuel Composition Sensor Circuit Range/Performance",
