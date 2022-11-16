@@ -1,18 +1,19 @@
+from communicate_with_database import*
 def find_shift_points(dict):
     lowestFCR = 100000000
     lowestFCRSpeed = 0
     shift_points = []
     for gear in dict:
-        for speed in gear:
+        for speed in dict[gear]:
             if dict[gear][speed] < lowestFCR:
-                lowestFCR = dict[gear][speed]
+                lowestFCR = dict[gear][str(speed)]
                 lowestFCRSpeed = speed
-        shift_points.append(speed)
+        shift_points.append(int(speed))
 
     return shift_points
 
 def fetchAdvice(speed, gear):
-    dict = json_to_dict()
+    dict = json_to_dict("FCRModel.json")
     shift_points = find_shift_points(dict)
     idealGear = 1
     direction = ""
@@ -24,8 +25,8 @@ def fetchAdvice(speed, gear):
     if gear == idealGear:
         direction = "maintain"
     elif gear < idealGear:
-        direction = "shift up"
+        direction = "up"
     elif gear > idealGear:
-        direction = "shift down"
+        direction = "down"
 
     return direction, idealGear

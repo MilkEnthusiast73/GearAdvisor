@@ -1,17 +1,19 @@
-def create_plot_dictionary(gearCount):
+from communicate_with_database import*
+# def create_plot_dictionary(gearCount):
 
-    graph = {}
+#     graph = {}
 
-    for gear in range(1, gearCount):
-        graph[gear] = {}
+#     for gear in range(1, gearCount):
+#         graph[gear] = {}
 
-        for speed in range(0,160):
-            graph[gear][speed] = None
+#         for speed in range(0,160):
+#             graph[gear][speed] = None
     
-    return graph
+#     return graph
 
-print(create_plot_dictionary(6))
+# print(create_plot_dictionary(6))
 
-def update_plot(plot, currentGear, currentSpeed, currentFCR):
-    plot[currentGear][currentSpeed] = currentFCR
-    return plot
+def update_plot(fileName, currentGear, currentSpeed, currentFCR):
+    graph = json_to_dict(fileName)
+    graph[str(currentGear)][str(currentSpeed)] = currentFCR
+    dict_to_json(graph,fileName)

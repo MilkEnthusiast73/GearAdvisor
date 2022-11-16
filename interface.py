@@ -32,23 +32,16 @@ class Interface:
                 if event.type == self.pygame.QUIT :
                     running = False
                     self.pygame.quit()
-                    quit()
-                elif event.type == self.pygame.KEYDOWN:
-                    if event.key == self.pygame.K_ESCAPE:
-                        #If the escape key was pressed
-                        running = False
-                        self.pygame.quit()
-                        quit()    
+                    quit()   
 
-        def update_advice(self, direction):
-            
-            if direction[0] == 'Maintain': 
-                self.text = 'Maintain in gear ' + str(direction[1]) 
+        def update_advice(self, direction, idealGear):
+            if direction == 'maintain': 
+                self.text = 'Maintain in gear ' + str(idealGear) 
                 #display_return = Function(text)
-            elif direction[0] == 'Up':
-                self.text = 'Change up to gear ' + str(direction[1])     
-            elif direction[0] == 'Down':
-                self.text = 'Change down to gear ' + str(direction[1])        
+            elif direction == 'up':
+                self.text = 'Change up to gear ' + str(idealGear)     
+            elif direction == 'down':
+                self.text = 'Change down to gear ' + str(idealGear)        
             else:
                 self.text = 'Waiting for your car information'       
 
