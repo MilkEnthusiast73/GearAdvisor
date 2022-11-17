@@ -53,5 +53,3 @@ class Interface:
             self.screen.blit(self.command,self.position)       
             self.pygame.display.update()
             self.clock.tick(self.FPS) #sets clock to reset at 60 FPS 
-
-    

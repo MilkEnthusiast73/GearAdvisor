@@ -14,13 +14,12 @@ car = CarSimulator(0.75,6,feederDict)
 
 def check_for_input():
     while True:
-
-        if keyboard.is_pressed('K_UP'):
+        if keyboard.is_pressed('KEY_UP'):
             car.increaseSpeed()
-        elif keyboard.is_pressed('K_DOWN'):
-             car.decreaseSpeed()
+        elif keyboard.is_pressed('KEY_DOWN'):
+            car.decreaseSpeed()
         elif keyboard.is_pressed('a'):
-             car.shiftDown()
+            car.shiftDown()
         elif keyboard.is_pressed('d'):
             car.shiftUp()
         time.sleep(1)
