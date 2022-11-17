@@ -7,31 +7,22 @@ import time
 import threading
 from threading import Thread
 import keyboard
+import pygame
 
 feederDict = json_to_dict("FCRModelFeed.json")
+car = CarSimulator(0.01,5,feederDict)
 view = Interface()
-car = CarSimulator(0.75,6,feederDict)
-
-def check_for_input():
-    while True:
-        if keyboard.is_pressed('KEY_UP'):
-            car.increaseSpeed()
-        elif keyboard.is_pressed('KEY_DOWN'):
-            car.decreaseSpeed()
-        elif keyboard.is_pressed('a'):
-            car.shiftDown()
-        elif keyboard.is_pressed('d'):
-            car.shiftUp()
-        time.sleep(1)
-
-driveThread = Thread(target=check_for_input)
-driveThread.start()
+     
 while True:
+    control = view.check_for_input()
+    car.update_car(control)
     gear, speed, FCR = car.get_metrics()
     direction = "NA"
     idealGear = 1
     if speed >= 1:
-        direction, idealGear = fetchAdvice(speed, gear)
+        direction = fetchAdvice(speed, gear)
+        #print("Gear: "+str(idealGear)+" Direction: "+str(direction))
         update_plot("FCRModel.json", gear, speed, FCR)
-    view.update_advice(direction, idealGear)
-    view.draw()
+    view.update_advice(direction, gear, speed, FCR)
+    view.main_draw()
+    view.clock.tick(60) #sets clock to 60 FPS 
