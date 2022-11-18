@@ -8,6 +8,11 @@ import threading
 from threading import Thread
 import keyboard
 import pygame
+import os 
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print(dir_path)
+os.chdir(dir_path)
 
 feederDict = json_to_dict("FCRModelFeed.json")
 car = CarSimulator(0.01,5,feederDict)
