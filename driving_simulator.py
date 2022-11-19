@@ -1,12 +1,9 @@
-import keyboard
-
 class CarSimulator():
 
-    def __init__(self, decelerationValue, gearCount, model):
+    def __init__(self, decelerationValue, model):
         self.speed = 0
         self.gear = 1
         self.deceleration = decelerationValue
-        self.maxGear = gearCount
         self.model = model
 
     def increaseSpeed(self):

@@ -6,14 +6,13 @@ from driving_simulator import*
 import time
 import threading
 from threading import Thread
-import keyboard
 import pygame
-import os 
+import os
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-feederDict = json_to_dict("FCRModelFeed.json")
-car = CarSimulator(0.01,5,feederDict)
+feederDict = json_to_dict("FCRModel.json")
+car = CarSimulator(0.01,feederDict)
 view = Interface()
      
 while True:
