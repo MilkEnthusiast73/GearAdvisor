@@ -11,7 +11,7 @@ import os
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-feederDict = json_to_dict("FCRModel.json")
+feederDict = json_to_dict("FCRModelFeed.json")
 car = CarSimulator(0.01,feederDict)
 view = Interface()
      
@@ -27,4 +27,4 @@ while True:
         update_plot("FCRModel.json", gear, speed, FCR)
     view.update_advice(direction, gear, speed, FCR)
     view.main_draw()
-    view.clock.tick(60) #sets clock to 60 FPS 
+    view.clock.tick(60) #sets clock to 60 FPS
