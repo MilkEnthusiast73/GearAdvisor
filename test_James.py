@@ -59,20 +59,3 @@ class TestPlotting(unittest.TestCase):
             
             #compare dictionaries
             self.assertEqual(Dictionary1,Dictionary2)
-
-                
-
-
-
-
-
-
-
-
-if __name__ == '__main__':
-    unittest.main()
-
-'pygame.tests.test_utils',
-pygame.tests.run_tests__tests',
-pygame.tests.run_tests__tests.all_ok',
-pygame.tests.run_tests__tests.failures1,
