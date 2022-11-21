@@ -15,7 +15,7 @@ class CarSimulator():
             self.speed -= 1
 
     def graduallySlow(self):
-        if str(int(self.speed - self.deceleration)) in self.model[str(self.gear)]:
+        if str(int(self.speed - self.deceleration)) in self.model[str(self.gear)] and self.speed - self.deceleration >=0:
             self.speed -= self.deceleration
 
     def shiftUp(self):

@@ -23,7 +23,6 @@ while True:
     idealGear = 1
     if speed >= 1:
         direction = fetchAdvice(speed, gear)
-        #print("Gear: "+str(idealGear)+" Direction: "+str(direction))
         update_plot("FCRModel.json", gear, speed, FCR)
     view.update_advice(direction, gear, speed, FCR)
     view.main_draw()
